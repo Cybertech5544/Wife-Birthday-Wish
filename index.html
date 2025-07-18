@@ -8,6 +8,9 @@
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
   </head>
   <body>
+    <audio id="bg-audio" autoplay loop hidden>
+      <source src="song.mp3" type="audio/mpeg" />
+    </audio>
     <div id="balloon-container"></div>
     <div class="dialog-birthday_message">
       <div class="balloons">
@@ -36,6 +39,26 @@
         <p id="companionMethods"></p>
       </div>
     </div>
+      <script>
+    window.addEventListener("load", function () {
+      const audio = document.getElementById("bg-audio");
+
+      const startAudio = () => {
+        audio.play().then(() => {
+          console.log("✅ Audio playing");
+        }).catch((err) => {
+          console.log("❌ Playback blocked:", err);
+        });
+
+        document.removeEventListener("click", startAudio);
+        document.removeEventListener("touchstart", startAudio);
+      };
+
+      // 🔁 Wait for first click/touch
+      document.addEventListener("click", startAudio);
+      document.addEventListener("touchstart", startAudio);
+    });
+  </script>
     <script src="script.js"></script>
   </body>
 </html>
