@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Great+Vibes&family=Tangerine:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  flex-direction: column;
+  font-family: cursive;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(84, 205, 241);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  gap: 10px;
+}
+
+.profile {
+  background: url(profile.png), no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 2px solid white;
+}
+.massage {
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  height: 80%;
+}
+p {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.2em;
+}
+
+.ballu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.balloons {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.balloonn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 60px;
+  background: hsl(215, 50%, 65%);
+  background: rgba(102, 145, 204, 1);
+  border-radius: 80%;
+  position: relative;
+  box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+  margin: 10px 1px;
+  transition: transform 0.5s ease;
+  z-index: 2;
+  animation: balloons 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes balloons {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+
+.balloonn:before {
+  content: "▲";
+  font-size: 20px;
+  color: hsl(215, 30%, 50%);
+  color: rgba(88, 125, 176, 1);
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: -13px;
+  z-index: -100;
+}
+
+.balloonn:after {
+  display: inline-block;
+  top: 65px;
+  position: absolute;
+  height: 100px;
+  width: 2px;
+  margin: 0 auto;
+  left: 24px;
+
+  content: "";
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.balloonn:nth-child(1) {
+  box-shadow: inset -10px -10px 0 rgba(88, 125, 176, 1);
+}
+
+.balloonn:nth-child(2) {
+  background: hsl(245, 40%, 65%);
+  animation-duration: 3.5s;
+}
+
+.balloonn:nth-child(2):before {
+  color: hsl(245, 40%, 65%);
+}
+
+.balloonn:nth-child(3) {
+  background: hsl(139, 50%, 60%);
+  animation-duration: 3s;
+}
+
+.balloonn:nth-child(3):before {
+  color: hsl(139, 30%, 50%);
+}
+
+.balloonn:nth-child(4) {
+  background: hsl(59, 50%, 58%);
+  animation-duration: 4.5s;
+}
+
+.balloonn:nth-child(4):before {
+  color: hsl(59, 30%, 52%);
+}
+
+.balloonn:nth-child(5) {
+  background: hsl(23, 55%, 57%);
+  animation-duration: 5s;
+}
+
+.balloonn:nth-child(5):before {
+  color: hsl(23, 44%, 46%);
+}
+.balloonn:nth-child(6) {
+  background: hsl(128, 55%, 57%);
+  animation-duration: 6s;
+}
+
+.balloonn:nth-child(6):before {
+  color: hsl(115, 44%, 46%);
+}
+.balloonn:nth-child(7) {
+  background: hsl(192, 55%, 57%);
+  animation-duration: 3.5s;
+}
+
+.balloonn:nth-child(7):before {
+  color: hsl(187, 44%, 46%);
+}
+.balloonn:nth-child(8) {
+  background: hsl(327, 55%, 57%);
+  animation-duration: 6.5s;
+}
+
+.balloonn:nth-child(8):before {
+  color: hsl(330, 44%, 46%);
+}
+
+#balloon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: opacity 500ms;
+}
+
+.balloon2 {
+  height: 100px;
+  width: 80px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+}
+
+.balloon2:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #4b4b0d;
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon2:after {
+  content: "▲";
+  text-align: center;
+  display: block;
+  position: absolute;
+  color: inherit;
+  top: 95px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300vh);
+    opacity: 0;
+  }
+}
